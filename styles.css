@@ -13,6 +13,7 @@ body {
 main {
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 
 .logo {
@@ -23,22 +24,25 @@ main {
 
 .top-container {
   display: flex;
-  flex-direction: row;
-  gap: 16px;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  /* gap: 16px; */
   margin-top: 54px;
 }
 
 .group1 {
+  /* max-width: 182.32px; */
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: auto 1fr 1fr;
   grid-template-rows: repeat(3, 1fr);
   row-gap: 14.4px;
   column-gap: 16.16px;
 }
 
 .group2 {
+  /* max-width: 182.32px; */
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: 1fr 1fr auto;
   grid-template-rows: repeat(3, 1fr);
   row-gap: 14.4px;
   column-gap: 16.16px;
@@ -48,20 +52,17 @@ main {
   transform: translateY(50%);
 }
 
+.top-middle {
+  order: 1;
+}
+
 h1 {
-  margin-top: 48px;
   color: #28283d;
   text-align: center;
   font-size: 40px;
   font-style: normal;
   font-weight: 900;
   line-height: 44px; /* 110% */
-}
-
-.description {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 }
 
 .main-description {
@@ -72,6 +73,12 @@ h1 {
   font-style: normal;
   font-weight: 500;
   line-height: 26px; /* 162.5% */
+}
+
+.buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .download {
@@ -97,7 +104,7 @@ h1 {
   line-height: 26px; /* 162.5% */
 }
 
-.description .about {
+.about {
   margin-top: 16px;
   width: 139px;
   height: 58px;
@@ -146,7 +153,7 @@ h1 {
 }
 
 .mid-container {
-  margin-top: 80px;
+  margin-top: 60px;
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
@@ -199,7 +206,6 @@ h1 {
 .below {
   margin-top: 64px;
   transform: translateY(+20%);
-  opacity: 0.25;
   z-index: 1;
 }
 
@@ -254,4 +260,182 @@ footer .download {
   border-radius: 29px;
   background: #855fb1;
   z-index: 1;
+}
+
+@media (min-width: 768px) {
+  .top-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 32px;
+    margin-top: 64px;
+  }
+
+  .icons img {
+    width: 110px;
+    height: 110px;
+  }
+
+  .top-middle {
+    order: 1;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .description {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .description h1 {
+    margin-top: 0;
+    width: 339px;
+    font-size: 48px;
+    line-height: 48px; /* 100% */
+  }
+
+  .description p {
+    width: 457px;
+  }
+
+  .buttons {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    margin-top: 32px;
+  }
+
+  .buttons .download {
+    margin-top: 0;
+  }
+
+  .buttons .about {
+    margin-top: 0;
+  }
+
+  .number {
+    margin-top: 80px;
+  }
+
+  .mid-container {
+    margin-top: 67.16px;
+    gap: 11px;
+  }
+
+  .mid-container img {
+    width: 164px;
+  }
+
+  .bottom-container {
+    margin-top: 45px;
+  }
+
+  .bottom-container h2 {
+    width: 445px;
+    margin-top: 16px;
+    font-size: 40px;
+    line-height: 44px; /* 110% */
+  }
+
+  .bottom-container p {
+    width: 573px;
+    margin-top: 32px;
+  }
+
+  footer {
+    background-image: url(./assets/tablet/image-footer.jpg);
+  }
+
+  footer h2 {
+    width: 457px;
+    font-size: 40px;
+    line-height: 44px; /* 110% */
+  }
+
+  footer p {
+    width: 573px;
+    margin-top: 32px;
+  }
+}
+
+@media (min-width: 1440px) {
+  .top-container {
+    margin-top: 61px;
+    width: 100%;
+  }
+
+  .top-middle {
+    order: 0;
+    width: 540px;
+  }
+
+  .description {
+    margin-top: 47px;
+  }
+
+  .number {
+    margin-top: 117px;
+  }
+
+  .mid-container {
+    margin-top: 64px;
+    gap: 30px;
+  }
+
+  .mid-container img {
+    width: 255px;
+  }
+
+  .bottom-container {
+    margin-top: 80px;
+  }
+
+  .bottom-container p {
+    width: 540px;
+    font-size: 18px;
+  }
+
+  .below {
+    margin-top: 72px;
+  }
+
+  footer {
+    height: 308px;
+    background-image: url(./assets/desktop/image-footer.jpg);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 110px 0;
+  }
+
+  footer h2 {
+    width: 350px;
+    margin-top: 0;
+    margin-right: 125px;
+    text-align: left;
+  }
+
+  footer p {
+    width: 350px;
+    margin-top: 0;
+    margin-right: 92px;
+    text-align: left;
+  }
+
+  footer .download {
+    margin: 0;
+  }
+
+  .buttons .download:hover {
+    cursor: pointer;
+    background: #71c0d4;
+  }
+
+  .buttons .about:hover,
+  footer .download:hover {
+    cursor: pointer;
+    background: #b18bdd;
+  }
 }
